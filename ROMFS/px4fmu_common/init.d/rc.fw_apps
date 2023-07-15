@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# Standard apps for fixed wing
+#
+# NOTE: Script variables are declared/initialized/unset in the rcS script.
+#
+
+#
+# Start the attitude and position estimator.
+#
+ekf2 start &
+
+#
+# Start Control Allocator
+#
+control_allocator start
+
+#
+# Start attitude controller.
+#
+fw_rate_control start
+fw_att_control start
+fw_pos_control start
+airspeed_selector start
+
+#
+# Start attitude control auto-tuner
+#
+fw_autotune_attitude_control start
+
+#
+# Start Land Detector.
+#
+land_detector start fixedwing

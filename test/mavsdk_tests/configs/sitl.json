@@ -1,0 +1,32 @@
+{
+    "mode": "sitl",
+    "simulator": "gazebo",
+    "mavlink_connection": "udp://:14540",
+    "tests":
+    [
+        {
+            "model": "iris",
+            "vehicle": "iris",
+            "test_filter": "[multicopter],[offboard]",
+            "timeout_min": 10
+        },
+        {
+            "model": "standard_vtol",
+            "vehicle": "standard_vtol",
+            "test_filter": "[vtol]",
+            "timeout_min": 10
+        },
+        {
+            "model": "tailsitter",
+            "vehicle": "tailsitter",
+            "test_filter": "[vtol]",
+            "timeout_min": 10
+        },
+        {
+            "model": "typhoon_h480",
+            "vehicle": "typhoon_h480",
+            "test_filter": "[controlallocation]",
+            "timeout_min": 10
+        }
+    ]
+}
